@@ -1,4 +1,24 @@
-# Ghost_pic
-学習復習のためミニアプリを作成するためのリポジトリ
-## 概要について
-不気味な写真などを匿名で投稿するアプリ
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
