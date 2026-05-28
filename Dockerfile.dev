@@ -1,26 +1,21 @@
-# Ruby のベースイメージを指定
-ARG RUBY_VERSION = 4.0.2
+FROM ruby:3.2.3
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
 
-# 環境変数の設定
-ENV LANG C.UTF-8  # 日本語対応
-ENV TZ Asia/Tokyo # タイムゾーンを日本に設定
+# build-essential,libpq,Node.js のインストール
+RUN apt-get update -qq \
+  && apt-get install -y ca-certificates curl gnupg \
+  && mkdir -p /etc/apt/keyrings \
+  && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+  && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+  && apt-get update -qq \
+  && apt-get install -y build-essential libpq-dev nodejs
 
-# 必要なパッケージのインストール
-RUN apt-get update -qq \\
-&& apt-get install -y ca-certificates curl gnupg \\
-&& mkdir -p /etc/apt/keyrings \\
-&& curl -fsSL <https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key> | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \\
-&& NODE_MAJOR=20 \\
-&& echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] <https://deb.nodesource.com/node_$NODE_MAJOR.x> nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \\
-&& wget --quiet -O - /tmp/pubkey.gpg <https://dl.yarnpkg.com/debian/pubkey.gpg> | apt-key add - \\
-&& echo "deb <https://dl.yarnpkg.com/debian/> stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn vim
+# Yarn のインストール
+RUN npm install -g yarn@1.22.22
 
-# アプリケーションディレクトリの作成
-WORKDIR /app
-
-# Bundlerのインストール
-RUN gem install bundler
-
-# アプリケーションのコードをコピー
-COPY ..
+# アプリケーション設定
+WORKDIR /myapp
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+COPY . .
