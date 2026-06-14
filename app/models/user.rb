@@ -5,4 +5,5 @@ class User < ApplicationRecord
   validates :email,  length: {maximum: 100}
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:password_digest] }
 
+  has_many :plant_boards, dependent: :destroy
 end
