@@ -10,13 +10,9 @@
 
     <div class="container px-5 py-5 mx-auto">
      <div class="flex flex-wrap -m-4">
-      <% if @plant_boards.present? %>
       <!-- article - start -->
-      <%= render @plant_boards %>
+      <%= render @plant %>
     <!--article - end -->
-  <% else %>
-    <div class="mb-3">育成株がありません</div>
-  <% end %>
      </div>
     </div>
   </div>
