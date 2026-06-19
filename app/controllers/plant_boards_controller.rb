@@ -1,6 +1,6 @@
 class PlantBoardsController < ApplicationController
   def new
-    @plant_board = PlantBoard.new
+    @plant_board = current_user.plant_boards.build
   end
 
   def create
@@ -13,16 +13,18 @@ class PlantBoardsController < ApplicationController
   end
 
   def index
-    @plant_boards = PlantBoard.includes(:user)
+    @plant_boards = current_user.plant_boards.order(created_at: :desc) 
   end
 
   def show
+    @plant_board = current_user.plant_boards.find(params[:id])
+    @plants = @plant_board.plants.order(created_at: :desc)
   end
 
   private
 
   def plant_board_params
-    params.require(:plant_board).permit(:plant_name, :body)
+    params.require(:plant_board).permit(:plant_name, :body, :plant_board_image, :plant_board_image_cache)
   end
 
 end

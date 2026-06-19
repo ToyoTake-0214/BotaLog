@@ -1,6 +1,7 @@
 class Plant < ApplicationRecord
-  validates :body, length: {maiximum: 500}
+  validates :body, length: {maximum: 500}
 
-  belong_to :user
-  belong_to :plant_board
+  mount_uploader :plant_image, PlantImageUploader
+  belongs_to :user
+  belongs_to :plant_board
 end

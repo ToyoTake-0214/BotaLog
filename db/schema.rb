@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_15_092816) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_18_132327) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_15_092816) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "plant_board_image"
     t.index ["user_id"], name: "index_plant_boards_on_user_id"
   end
 
@@ -29,6 +30,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_15_092816) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "plant_image"
     t.index ["plant_board_id"], name: "index_plants_on_plant_board_id"
     t.index ["user_id"], name: "index_plants_on_user_id"
   end

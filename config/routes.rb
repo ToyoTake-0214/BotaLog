@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
 
   resources :plant_boards, only: %i[index new create show] do
-    resources :plants, only: %i[create edit destroy]
+    resources :plants, only: %i[new create edit destroy], shallow:true
   end
 
   get 'login', to: 'user_sessions#new'

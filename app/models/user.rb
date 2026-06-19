@@ -7,4 +7,9 @@ class User < ApplicationRecord
 
   has_many :plant_boards, dependent: :destroy
   has_many :plants, dependent: :destroy
+
+  def own?(object)
+    id == object&.user_id
+  end
+
 end
