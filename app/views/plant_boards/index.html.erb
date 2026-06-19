@@ -1,0 +1,23 @@
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+    <!-- text - start -->
+    <div class="mb-10 md:mb-16">
+      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">植物一覧</h2>
+
+      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
+    </div>
+    <!-- text - end -->
+
+    <div class="container px-5 py-5 mx-auto">
+     <div class="flex flex-wrap -m-4">
+      <% if @plant_boards.present? %>
+      <!-- article - start -->
+      <%= render @plant_boards %>
+    <!--article - end -->
+  <% else %>
+    <div class="mb-3">育成株がありません</div>
+  <% end %>
+     </div>
+    </div>
+  </div>
+</div>
