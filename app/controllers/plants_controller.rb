@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-  before_action :set_plant_board, only: [:new, :create]
+  before_action :set_plant_board, only: [:new, :create, ]
 
   def new
     @plant = @plant_board.plants.build
@@ -14,6 +14,13 @@ class PlantsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+
+  def destroy
+    plant = current_user.plants.find(params[:id])
+    plant.destroy!
+    redirect_to plant_board_path(plant.plant_board)
   end
 
   private

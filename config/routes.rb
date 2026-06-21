@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   resources :users, only: %i[new create]
 
-  resources :plant_boards, only: %i[index new create show] do
+  resources :plant_boards, only: %i[index new create show edit update destroy] do
     resources :plants, only: %i[new create edit destroy], shallow:true
   end
 
