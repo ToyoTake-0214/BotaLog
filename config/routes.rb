@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :plant_boards, only: %i[index new create show edit update destroy] do
     resources :plants, only: %i[new create edit destroy], shallow:true
+
+    #水やりアクション
+    patch "water", on: :member
+
   end
 
   get 'login', to: 'user_sessions#new'
