@@ -1,23 +1,41 @@
-<div class="bg-white py-6 sm:py-8 lg:py-12">
+<div class="py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-    <!-- text - start -->
-    <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">植物一覧</h2>
 
-      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">植物名、水やり頻度を管理しましょう</p>
+    <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between md:mb-16">
+      <div>
+        <h2 class="mb-2 text-2xl font-bold text-gray-800 lg:text-3xl">
+          マイ植物一覧
+        </h2>
+
+        <p class="text-gray-500 md:text-lg">
+          植物名、水やり頻度を管理しましょう
+        </p>
+      </div>
+
+      <%= link_to new_plant_board_path,
+                  class: "inline-flex items-center justify-center rounded-lg border border-green-600 px-4 py-3 text-sm font-medium text-green-700 hover:bg-green-50 sm:mt-1" do %>
+        ＋ 新規登録
+      <% end %>
     </div>
-    <!-- text - end -->
 
     <div class="container px-5 py-5 mx-auto">
-     <div class="flex flex-wrap -m-4">
-      <% if @plant_boards.present? %>
-      <!-- article - start -->
-      <%= render @plant_boards %>
-    <!--article - end -->
-  <% else %>
-    <div class="mb-3">育成株がありません</div>
-  <% end %>
-     </div>
+      <div class="flex flex-wrap -m-4">
+        <% if @plant_boards.present? %>
+          <%= render @plant_boards %>
+        <% else %>
+          <div class="w-full rounded-lg border border-dashed border-gray-300 bg-white px-6 py-10 text-center">
+            <p class="mb-4 text-gray-500">
+              育成株がありません
+            </p>
+
+            <%= link_to new_plant_board_path,
+                        class: "inline-flex items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-sm font-medium text-white hover:bg-green-700" do %>
+              最初の植物を登録する
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
+
   </div>
 </div>

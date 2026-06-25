@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      plant_board: 植物ボード
+      plant: 育成記録
+
+    attributes:
+      user:
+        user_name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_digest: パスワード
+        first_name: 名
+        last_name: 姓
+
+      plant_board:
+        plant_name: 植物名
+        body: 説明
+        user_id: ユーザー
+        plant_board_image: 植物画像
+        watering_interval_days: 水やり頻度
+        last_watered_on: 最後に水やりした日
+        created_at: 作成日時
+        updated_at: 更新日時
+
+      plant:
+        body: 本文
+        user_id: ユーザー
+        plant_board_id: 植物ボード
+        plant_image: 記録画像
+        created_at: 作成日時
+        updated_at: 更新日時

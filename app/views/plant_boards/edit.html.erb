@@ -1,4 +1,15 @@
-<section class = "py-10 bg-gray-50">
-  <h1>edit</h1>
-  <%= render 'form', plant_board: @plant_board %> 
+<section class="py-10 bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="mb-8 text-center">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-900">
+        マイ植物を編集
+      </h1>
+
+      <p class="mt-2 text-sm text-gray-500">
+        植物の情報や水やり頻度を変更できます
+      </p>
+    </div>
+
+    <%= render 'form', plant_board: @plant_board %>
+  </div>
 </section>

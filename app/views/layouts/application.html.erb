@@ -19,13 +19,15 @@
   </head>
 
   <body>
-    <div class="px-4">
+    <div class= "px-4">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
     </div>
+    <div class= "bg-gray-50" >
       <%= yield %>
+    </div>
   </body>
 </html>

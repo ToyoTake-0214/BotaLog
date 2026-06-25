@@ -1,0 +1,101 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      user_name: ユーザーネーム
+      password: パスワード
+
+  defaults:
+    create: 作成
+    show: 詳細
+    edit: 編集
+    delete: 削除
+    update: 更新
+    back: 戻る
+    search: 検索
+    unspecified: 未設定
+    delete_confirm: 削除しますか？
+    water_confirm: 水やりを記録しますか？
+
+  header:
+    login: ログイン
+    logout: ログアウト
+    plant_board_index: 植物一覧
+    create_plant_board: 植物を登録
+    profile: プロフィール
+
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: ユーザー登録はこちら
+      password_forget: パスワードをお忘れの方はこちら
+
+  users:
+    new:
+      title: ユーザー登録
+      submit: 登録
+      password: パスワード
+
+      to_login_page: ログインページへ
+
+  plant_boards:
+    index:
+      title: 植物一覧
+      no_plant_boards: 登録されている植物はありません
+      create_plant_board: 植物を登録する
+
+    new:
+      plant_board: 植物登録
+      plant_name: 植物名
+      body: 説明
+      submit: 登録
+
+    create:
+      success: 植物を登録しました
+      failure: 植物を登録できませんでした
+
+    show:
+      title: 植物詳細
+      plant_records: 育成記録
+      no_plants: 育成記録はまだありません
+      create_plant: 育成記録を追加する
+      water: 水やり完了
+      watering_interval: "%{days}日ごと"
+      watering_remaining: 水やりまであと%{days}日
+      watering_today: 今日水やりです
+      watering_overdue: 水やり予定日を%{days}日過ぎています
+      watering_unset: 水やり情報が未設定です
+
+    edit:
+      title: 植物情報編集
+      submit: 更新
+
+    update:
+      success: 植物情報を更新しました
+      failure: 植物情報を更新できませんでした
+
+    destroy:
+      success: 植物を削除しました
+
+    water:
+      success: 水やりを記録しました
+
+  plants:
+    new:
+      title: 育成記録作成
+      submit: 登録
+
+    create:
+      success: 育成記録を作成しました
+      failure: 育成記録を作成できませんでした
+
+    edit:
+      title: 育成記録編集
+      submit: 更新
+
+    destroy:
+      success: 育成記録を削除しました
