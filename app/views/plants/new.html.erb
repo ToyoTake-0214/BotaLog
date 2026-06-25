@@ -1,0 +1,51 @@
+<section class="py-10 bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="mb-8 text-center">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-900">
+        育成記録を追加
+      </h1>
+
+      <p class="mt-2 text-sm text-gray-500">
+        植物の写真と成長の様子を追加しましょう
+      </p>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 md:p-8">
+      <%= form_with model: [@plant_board, @plant] do |f| %>
+        <div class="space-y-6">
+
+          <div>
+            <label class="block">
+              <span class="block mb-2 text-sm font-medium text-gray-700">
+                育成画像
+              </span>
+
+              <%= f.file_field :plant_image,
+                  class: "block w-full text-sm text-gray-500 focus:outline-hidden file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:cursor-pointer file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none",
+                  accept: "image/*" %>
+
+              <%= f.hidden_field :plant_image_cache %>
+            </label>
+          </div>
+
+          <div>
+            <%= f.label :body,
+                "育成メモ",
+                class: "block mb-2 text-sm font-medium text-gray-700" %>
+
+            <%= f.text_area :body,
+                class: "py-3 px-4 block w-full bg-white border border-gray-300 rounded-lg text-sm text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none",
+                rows: "4",
+                placeholder: "育成記録を入力してください" %>
+          </div>
+
+          <div class="pt-4">
+            <%= f.submit "追加", 
+                class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

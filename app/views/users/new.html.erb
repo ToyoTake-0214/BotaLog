@@ -1,0 +1,36 @@
+<div class="container py-24">
+  <%= form_with model: @user, class: "space-y-6" do |f| %>
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-600">
+       アカウントを作成！ 
+      </h2>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="px-4 py-8 sm:px-10">
+        <div>
+          <%= f.label :user_name, class: "block text-sm font-medium text-gray-700" %>
+
+          <div class="mt-1">
+            <%= f.text_field :user_name,
+              class: "block w-full px-5 py-3 text-base text-gray-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+
+          <div class="mt-1">
+            <%= f.password_field :password,
+              class: "block w-full px-5 py-3 text-base text-gray-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.submit "登録",
+            class: "flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
