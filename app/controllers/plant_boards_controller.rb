@@ -1,5 +1,5 @@
 class PlantBoardsController < ApplicationController
-  before_action :set_plant_board, only: [:show, :edit, :update, :destroy, :water]
+  before_action :set_plant_board, only: [ :show, :edit, :update, :destroy, :water ]
   def new
     @plant_board = current_user.plant_boards.build
   end
@@ -16,7 +16,7 @@ class PlantBoardsController < ApplicationController
   end
 
   def index
-    @plant_boards = current_user.plant_boards.order(created_at: :desc) 
+    @plant_boards = current_user.plant_boards.order(created_at: :desc)
   end
 
   def show
@@ -56,5 +56,4 @@ class PlantBoardsController < ApplicationController
   def plant_board_params
     params.require(:plant_board).permit(:plant_name, :body, :plant_board_image, :plant_board_image_cache, :watering_interval_days)
   end
-
 end

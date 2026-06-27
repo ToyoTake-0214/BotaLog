@@ -19,5 +19,4 @@ class PlantBoard < ApplicationRecord
 
     (next_watering_on - Date.current).to_i
   end
-
 end
