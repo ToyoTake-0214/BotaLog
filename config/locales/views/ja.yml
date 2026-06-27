@@ -30,26 +30,42 @@ ja:
   user_sessions:
     new:
       title: ログイン
-      login: ログイン
-      to_register_page: ユーザー登録はこちら
-      password_forget: パスワードをお忘れの方はこちら
+      description: ユーザーネームとパスワードを入力してください
+      submit: ログイン
+      register_guidance: アカウントをお持ちでない方は
+      to_register_page: 新規登録
+
+    create:
+      success: ログインしました！ 
+      failure: ログインに失敗しました
+
+    destroy:
+      success: ログアウトしました
 
   users:
     new:
-      title: ユーザー登録
+      title: アカウントを作成
+      description: ユーザーネームとパスワードを登録してください
       submit: 登録
-      password: パスワード
+      login_guidance: すでにアカウントをお持ちの方は
+      to_login_page: ログイン
 
       to_login_page: ログインページへ
 
+    create:
+      success: ユーザ登録が完了しました！ 
+      failure: ユーザ登録に失敗しました
+
+
   plant_boards:
     index:
-      title: 植物一覧
+      title: マイ植物
       no_plant_boards: 登録されている植物はありません
       create_plant_board: 植物を登録する
 
     new:
-      plant_board: 植物登録
+      title: マイ植物登録
+      plant_board: マイ植物登録
       plant_name: 植物名
       body: 説明
       submit: 登録
@@ -59,7 +75,7 @@ ja:
       failure: 植物を登録できませんでした
 
     show:
-      title: 植物詳細
+      title: 育成記録 
       plant_records: 育成記録
       no_plants: 育成記録はまだありません
       create_plant: 育成記録を追加する
@@ -71,7 +87,7 @@ ja:
       watering_unset: 水やり情報が未設定です
 
     edit:
-      title: 植物情報編集
+      title: マイ植物編集
       submit: 更新
 
     update:
@@ -86,7 +102,7 @@ ja:
 
   plants:
     new:
-      title: 育成記録作成
+      title: 育成記録追加
       submit: 登録
 
     create:

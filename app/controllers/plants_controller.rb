@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-  before_action :set_plant_board, only: [:new, :create, ]
+  before_action :set_plant_board, only: [ :new, :create ]
 
   def new
     @plant = @plant_board.plants.build
@@ -30,6 +30,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:body, :plant_image, :plant_image_cache  )
+    params.require(:plant).permit(:body, :plant_image, :plant_image_cache)
   end
 end
