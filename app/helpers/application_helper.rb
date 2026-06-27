@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def page_title(title ='')
-    base_title = 'GHO'
+  def page_title(title = "")
+    base_title = "GHO"
     title.present? ? "#{title} | #{base_title}" : base_title
   end
 end
