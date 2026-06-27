@@ -7,10 +7,11 @@ ja:
 
     attributes:
       user:
-        user_name: ユーザー名
+        user_name: ユーザーネーム
         email: メールアドレス
         password: パスワード
         password_digest: パスワード
+        password_confirmation: パスワード確認
         first_name: 名
         last_name: 姓
 

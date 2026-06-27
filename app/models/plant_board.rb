@@ -1,6 +1,6 @@
 class PlantBoard < ApplicationRecord
   validates :plant_name, presence: true, length: { maximum: 50 }
-  validates :body, presence: true, length: { maximum: 300 }
+  validates :body, length: { maximum: 300 }
 
   mount_uploader :plant_board_image, PlantBoardImageUploader
 
