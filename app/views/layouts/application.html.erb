@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -18,16 +18,21 @@
     <%= javascript_importmap_tags %>
   </head>
 
+
   <body>
-    <div class= "px-4">
+  <div>
     <% if logged_in? %>
-      <%= render 'shared/header' %>
+      <%= render "shared/header" %>
     <% else %>
-      <%= render 'shared/before_login_header' %>
+      <%= render "shared/before_login_header" %>
     <% end %>
-    </div>
-    <div class= "bg-gray-50" >
-      <%= yield %>
-    </div>
+  </div>
+
+  <%= render "shared/flash_message" %>
+
+  <div class="bg-gray-50">
+    <%= yield %>
+  </div>
+  <%= render "shared/footer" %>
   </body>
 </html>

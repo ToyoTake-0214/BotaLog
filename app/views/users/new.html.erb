@@ -1,36 +1,57 @@
-<div class="container py-24">
-  <%= form_with model: @user, class: "space-y-6" do |f| %>
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-600">
-       アカウントを作成！ 
-      </h2>
-    </div>
+<% content_for(:title, t('.title')) %>
+<div class="flex min-h-screen overflow-hidden">
+  <div class="flex flex-col justify-center flex-1 px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+    <div class="w-full max-w-xl mx-auto lg:w-96">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800">
+          <%= t(".title") %>
+        </h2>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="px-4 py-8 sm:px-10">
-        <div>
-          <%= f.label :user_name, class: "block text-sm font-medium text-gray-700" %>
+        <p class="mt-2 text-sm text-gray-500">
+          <%= t(".description") %>
+        </p>
+      </div>
 
-          <div class="mt-1">
-            <%= f.text_field :user_name,
-              class: "block w-full px-5 py-3 text-base text-gray-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" %>
+      <div class="mt-8">
+        <%= form_with model: @user do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="space-y-5">
+            <div>
+              <%= f.label :user_name, class: "block text-sm font-medium text-gray-700" %>
+
+              <div class="mt-1">
+                <%= f.text_field :user_name,
+                                 class: "block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-500 focus:ring-green-500" %>
+              </div>
+            </div>
+
+            <div>
+              <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+
+              <div class="mt-1">
+                <%= f.password_field :password,
+                                     class: "block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-500 focus:ring-green-500" %>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <%= f.submit t(".submit"),
+                           class: "flex w-full items-center justify-center rounded-lg bg-green-600 px-4 py-3 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" %>
+            </div>
           </div>
-        </div>
+        <% end %>
 
-        <div>
-          <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
-
-          <div class="mt-1">
-            <%= f.password_field :password,
-              class: "block w-full px-5 py-3 text-base text-gray-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" %>
-          </div>
-        </div>
-
-        <div>
-          <%= f.submit "登録",
-            class: "flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
-        </div>
+        <p class="mt-6 text-sm text-gray-500">
+          <%= t(".login_guidance") %>
+          <%= link_to t(".to_login_page"),
+                      login_path,
+                      class: "font-medium text-green-700 hover:text-green-800" %>
+        </p>
       </div>
     </div>
-  <% end %>
+  </div>
+
+  <div class="relative hidden flex-1 overflow-hidden lg:block">
+    <%= image_tag "user_new.png", class:"absolute inset-0 h-full w-full object-cover" %>
+  </div>
 </div>
