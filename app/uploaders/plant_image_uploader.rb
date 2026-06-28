@@ -8,7 +8,7 @@ class PlantImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "plant_board_placeholder"
+    "plant_board_placeholder.png"
   end
 
 

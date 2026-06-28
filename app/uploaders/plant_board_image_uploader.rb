@@ -19,7 +19,7 @@ class PlantBoardImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "plant_board_placeholder"
+    "plant_board_placeholder.png"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
